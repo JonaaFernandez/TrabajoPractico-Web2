@@ -5,7 +5,7 @@ require_once "./Model/PropertiesModel.php";
 require_once "./Model/PropertiesTypesModel.php";
 
 // esto es una prueba para el git
-
+// esto es otra prueba mas!!
 class PropertiesController{
 
     private $cont;
