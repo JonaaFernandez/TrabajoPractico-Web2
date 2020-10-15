@@ -22,7 +22,6 @@ class PropertiesController{
     }
 
      private function checklogueado(){ // CHEQUEA EL ESTADO DE LA SESION Y SU ULTIMA ACIVIDAD
-       /*  session_start(); */
 
         if (!isset($_SESSION['USERNAME'])){
             
@@ -54,10 +53,9 @@ class PropertiesController{
     }
 
     function showAllProp(){ /* Muestra "ventas, dependiendo si estoy como admin o usuario */
-    /* $this->checklogueado(); */
      $prop = $this->model->GetAllProp();
      $typeProp = $this->typeModel->GetAll();
-    $this->view->ShowAll($prop,$typeProp/* ,$this->admin */);
+    $this->view->ShowAll($prop,$typeProp);
     }
 
     
@@ -99,10 +97,16 @@ class PropertiesController{
 
     
     function EditProp(){
-            $this->checklogueado();
+        $this->checklogueado();
         $id = ($_POST['input_id']);
-        $this->model->updateProp($_POST['input_id'],$_POST['input_type'],$_POST['input_name'],$_POST['input_adress'],$_POST['input_value'],$_POST['input_description'],$_POST['input_date']);
-        $this->view->ShowListLocation();
+        if ((isset($_POST['input_name'])) && (isset($_POST['input_value'])) && ($_POST['input_name']!= "")  && ($_POST['input_value'] !="" )) {
+            $this->model->updateProp($_POST['input_id'],$_POST['input_type'],$_POST['input_name'],$_POST['input_adress'],$_POST['input_value'],$_POST['input_description'],$_POST['input_date']);
+            $this->view->ShowListLocation();
+        }
+        else {
+        $this->view->showerror();
+
+        }
     }
  
 
@@ -119,8 +123,6 @@ class PropertiesController{
 
     function  showByType(){
         $id = ($_POST['input_type']);
-        //echo "llegue a showByType" . $id;
-       // $prop_id = $params[':ID'];
         $prop = $this->model->GetByType($id);
         $typeProp = $this->typeModel->GetAll();
         $this->view->ShowAll($prop,$typeProp,$this->admin); 
@@ -130,15 +132,9 @@ class PropertiesController{
         $this->checklogueado();
         $prop_id = $params[':ID'];
         $this->model->deleteProp($prop_id);
-        //$this->view->ShowHomeLocation();
         $this->view->ShowListLocation();
     }
-/*
-    function MarkAsCompletedTask($params = null){
-        $task_id = $params[':ID'];
-        $this->model->MarkAsCompletedTask($task_id);
-        $this->view->ShowHomeLocation();
-    }*/
+
 
 }
 
