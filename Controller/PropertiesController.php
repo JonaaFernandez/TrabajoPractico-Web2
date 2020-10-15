@@ -81,9 +81,13 @@ class PropertiesController{
   
     function InsertProp(){
         $this->checklogueado();
-        $typeProp = $this->typeModel->GetAll();
-        $this->model->insertProp($_POST['input_type'],$_POST['input_name'],$_POST['input_adress'],$_POST['input_description'],$_POST['input_value'],$_POST['input_date']);
-        $this->view->showformNew($typeProp);
+        if ((isset($_POST['input_name'])) && (isset($_POST['input_value'])) && ($_POST['input_name']!= "")  && ($_POST['input_value'] !="" )) {
+             $typeProp = $this->typeModel->GetAll();
+             $this->model->insertProp($_POST['input_type'],$_POST['input_name'],$_POST['input_adress'],$_POST['input_description'],$_POST['input_value'],$_POST['input_date']);
+             $this->view->showformNew($typeProp);
+        } else {
+            $this->view->showerror("Los datos ingresados son incorrectos");
+        }
     }
 
       

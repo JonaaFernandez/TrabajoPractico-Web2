@@ -1,6 +1,6 @@
 <?php
     require_once 'Controller/PropertiesController.php';
-  /*   require_once 'Controller/PropertiesAdvanceController.php'; */
+  
     require_once 'RouterClass.php';
     require_once 'Controller/UserController.php';
     require_once 'Controller/PropertiesTypesController.php';
@@ -37,7 +37,7 @@
 
   // Mostrar uno
     $r->addRoute("ver/:ID", "GET", "PropertiesController","viewOne");
-    //$r->addRoute("mostrar/:ID", "GET", "PropertiesController", "viewOne");
+  
 // llama al form para modificar
     $r->addRoute("modificar/:ID", "GET", "PropertiesController", "cargaProp");
 // lee los datos del form  y modifica los datos   
@@ -67,31 +67,6 @@ $r->addRoute("guardarMod","POST", "PropertiesTypesController", "edit");
 $r->addRoute("insertTipo","POST", "PropertiesTypesController", "insert");
 
 $r->addRoute("eliminarTipo/:ID","GET", "PropertiesTypesController", "delete");
-
- 
- 
- 
-    // Acá podría tener un formulario de edición
-/*
- // Formulario para nuevo dinosaurio
- $router->addRoute("dinosaurio", "GET", "DinosaurioController", "formNew");
-
- // Acción formulario nuevo dinosaurio
- $router->addRoute("dinosaurio", "POST", "DinosaurioController", "new");
-
- // Acción de editar dinosaurio
- $router->addRoute("dinosaurio/:ID", "POST", "DinosaurioController", "edit");
-
- // Elimina un dinosaurio
- $router->addRoute("dinosaurio/:ID", "DELETE", "DinosaurioController", "delete");
- $router->addRoute("dinosaurio/:ID/delete", "GET", "DinosaurioController", "delete");
-  /*
- // Por defecto mostrar todos
- $router->setDefaultRoute("DinosaurioController", "getAll");
-
-    //Advance
-   //  $r->addRoute("autocompletar", "GET", "rStateController", "AutoCompletar");*/
-
 
 
     //run

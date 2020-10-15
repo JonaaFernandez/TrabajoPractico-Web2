@@ -45,35 +45,7 @@ class PropertiesTypesModel{
        $sentencia->execute([$nombre, $descripcion, $id]);
 return;
    }
-
-      /* 
-      function getType($id){
-         $sentencia = $this->db->prepare("SELECT * FROM tipos_propiedades WHERE id=?");
-         $sentencia->execute([$id]);
-         return $sentencia->fetchAll(PDO::FETCH_OBJ);
-        
-    }
-
-    function updateTypeProp($id,$nombre,$descripcion){
-        $sentencia = $this->db->prepare("UPDATE tipos_propiedades SET nombre=?, descripcion=?, WHERE id=? ");
-        $sentencia->execute([$nombre,$descripcion,$id]);
-    return;
-  }
-     
-  
-
-
-      function DeleteTaskDelModelo($task_id){
-          $sentencia = $this->db->prepare("DELETE FROM task WHERE id=?");
-          $sentencia->execute(array($task_id));
-      }
-      
-      function MarkAsCompletedTask($task_id){
-          $sentencia = $this->db->prepare("UPDATE task SET completed=1 WHERE id=?");
-          $sentencia->execute(array($task_id));
-      
-      } */
-      
+   
 }
 
 ?>

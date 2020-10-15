@@ -1,7 +1,7 @@
 <?php
 
 require_once('libs/smarty/Smarty.class.php');
-//require_once(' propertiesView.php');
+
 
 class PropertiesTypesView{
    
@@ -28,7 +28,7 @@ function showAllTypes($type){   // muestra todos los tipos de propiedad
     $smarty = new Smarty();  
     $smarty->assign('title', $this->title); 
     $smarty->assign('tipo', $tipo);
-   // $smarty->assign('admin', $admin);
+   
     $smarty->display('templates/listaTipos.tpl');
 
     }
@@ -45,7 +45,7 @@ function showAllTypes($type){   // muestra todos los tipos de propiedad
         $smarty = new Smarty();  
         $smarty->assign('title', $this->title); 
         $smarty->assign('tipo', $oneType);
-    // $smarty->assign('admin', $admin);
+  
         $smarty->display('templates/showOneType.tpl');
 
     }
@@ -56,13 +56,20 @@ function showAllTypes($type){   // muestra todos los tipos de propiedad
         $smarty = new Smarty();  
         $smarty->assign('title', $this->title); 
         $smarty->assign('tipo', $oneType);
-    // $smarty->assign('admin', $admin);
+
         $smarty->display('templates/showFormEdit.tpl');
 
     }
 
 
+    function ShowError($mensaje = ""){
 
+        $smarty = new Smarty();
+        $smarty->assign('title', $this->title);
+        $smarty->assign('mensaje', $mensaje);  
+        $smarty->display('templates/error.tpl'); 
+    
+    }
     
 
 }
