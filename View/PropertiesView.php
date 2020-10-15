@@ -110,6 +110,16 @@ function showAll($prop,$typeProp/* ,$admin */){   //VENTAS
        
     }
 
+   
+    function ShowError($mensaje = ""){
+
+        $smarty = new Smarty();
+        $smarty->assign('title', $this->title);
+        $smarty->assign('mensaje', $mensaje);  
+        $smarty->display('templates/error.tpl'); 
+    
+    }
+
 
 function showForEditProp($prop,$typeProp){
     $tipo = $prop[0]->tipo;

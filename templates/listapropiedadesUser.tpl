@@ -4,7 +4,7 @@
 <div class="w-75 mx-auto">
 
 
-    <h2 class="display-4 text-capitalize grey-color container"> Propiedades en venta </h2>
+    <h2 class="display-4 text-capitalize grey-color container"> Propiedades en venta  </h2>
 
     <table class="font-size-tabla mt-4 ml-2 mt-2 tabla">
         <th class="th-tipo text-center th-prop th-prop-largo"> TIPO DE PROPIEDAD </th>
@@ -36,9 +36,9 @@
         {/foreach}
 
     </table>
-     
+
 </div>
-    <p></p>
+<p></p>
 <div class="container">
     <div class="container">
         <form action="mostrarPorTipo" method="POST">
@@ -50,7 +50,7 @@
                     {/foreach}
                 </select>
                 <button type="submit" class="ml-3 btn btn-primary bg-dark">Seleccionar</button>
-               
+
             </div>
         </form>
     </div>

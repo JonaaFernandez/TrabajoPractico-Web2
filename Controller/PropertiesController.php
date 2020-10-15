@@ -104,7 +104,7 @@ class PropertiesController{
             $this->view->ShowListLocation();
         }
         else {
-        $this->view->showerror("Los datos ingresados son incorrectos");
+        $this->view->showError("Los datos ingresados son incorrectos");
 
         }
     }

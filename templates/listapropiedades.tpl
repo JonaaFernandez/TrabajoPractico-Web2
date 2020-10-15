@@ -1,11 +1,11 @@
 {include file="header.tpl"}
 
 <div class="w-75 mx-auto">
-{if isset($user)}
+    {if isset($user)}
         <h2 class="display-4 text-capitalize grey-color container"> Administrar </h2>
     {/if}
     {if !isset($user)}
-        <h2 class="display-4 text-capitalize grey-color container">Propiedades en venta</h2>
+        <h2 class="display-4 text-capitalize grey-color container">Propiedades en venta </h2>
     {/if}
     <table class="font-size-tabla mt-4 ml-2 mt-2 tabla">
         <th class="th-tipo text-center th-prop th-prop-largo"> TIPO DE PROPIEDAD </th>
@@ -13,7 +13,9 @@
         <th class="th-valor text-center th-prop th-prop-largo "> VALOR en U$S</th>
 
         {if !isset($user)}
-            <th class="th-valor text-center th-prop th-acciones th-borde-right "> ACCIONES</th>
+            <th class="th-valor text-center th-prop th-acciones "></th>
+            <th class="th-valor text-center th-prop th-acciones "> ACCIONES</th>
+            <th class="th-valor text-center th-prop th-acciones th-borde-right "></th>
         {/if}
 
 
@@ -32,14 +34,14 @@
                 <td class="td-prop text-center"> U$S {$tipoprop->valor}</td>
     
                 <div class="acciones">
-                {if !isset($user)}
+                    {* {if !isset($user)} *}
                         <td class="p-0 border-btn "><a href="ver/{$tipoprop->id}" class="p-1 m-1 bg-dark ancho-ver "> VER </td>
                         <td class="p-0 border-btn "><a href="modificar/{$tipoprop->id}" class="p-1 m-1 bg-dark ancho-modif"> MODIFICAR </td>
                         <td class="p-0 th-borde-right border-btn"> <a href="eliminar/{$tipoprop->id}" class=" p-1 m-1 bg-dark ancho-ver"> ELIMINAR </td>
-                    {/if}
-                    {if isset($user)}
-                        <td class="p-0 border-btn  th-borde-right"> <a href="ver/{$tipoprop->id}" class="p-1 m-1 bg-dark ancho-ver "> VER </td>
-                    {/if}
+                  {*   {/if} *}
+             {*        {if isset($user)} *}
+{*                         <td class="p-0 border-btn  th-borde-right"> <a href="ver/{$tipoprop->id}" class="p-1 m-1 bg-dark ancho-ver "> VER </td>
+ *}            {*         {/if} *}
                 </div>
     
             </tr>
